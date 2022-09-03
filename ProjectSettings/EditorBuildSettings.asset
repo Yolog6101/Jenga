@@ -4,7 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/GrabCube.unity
+    guid: 6320afeb48eb9774a9d4fddf8e3d771a
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 00e113867d09db340b65658a86a80e5e, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 141c49a6aa567264d99b7349652f1906, type: 2}
