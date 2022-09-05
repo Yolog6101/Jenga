@@ -49,7 +49,23 @@ public class OnCollisionEnterSample : MonoBehaviour
             
             //ゲームオーバーの文字表示
             gameOverText.text="GameOver";
+            //このスクリプトから生成したコンポーネントにアタッチしたオブジェクト(=TextMeshPro)の「text」を「GameOver」に変更(アタッチしているのでGetComponentは不要)
+            gameOverText.color=new Color32(255,0,0,255);
+            //このスクリプトから生成したコンポーネントにアタッチしたオブジェクト(=TextMeshPro)の色(文字色 RGBA)を変更(アタッチしているのでGetComponentは不要)            
+            gameOverText.fontSize=70;//float型になる
+
+            //文字装飾(あらかじめShaderの「outline」をONにしておく)
+            gameOverText.outlineColor=new Color32(255,255,255,255);
+            gameOverText.outlineWidth=0.15f;
+            gameOverText.UpdateFontAsset();//更新
+            gameOverText.fontStyle=TMPro.FontStyles.Italic;//イタリック体(斜字)に(https://docs.unity3d.com/Packages/com.unity.textmeshpro@1.3/api/TMPro.FontStyles.html)           
+
+            //このスクリプトから生成したコンポーネントにアタッチしたオブジェクト(=TextMeshPro)の位置を上中央(Top)に変更
+            //参考 https://docs.unity3d.com/Packages/com.unity.textmeshpro@1.3/api/TMPro.TextAlignmentOptions.html
+            gameOverText.alignment=TMPro.TextAlignmentOptions.Top;
             
+
+            //☆TextMeshProのプロパティを操作するコード一覧(一部) https://qiita.com/hinagawa/items/b606c6a2fd56d559a375 ☆
         }
     }
 }
