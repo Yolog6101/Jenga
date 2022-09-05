@@ -29,7 +29,7 @@ public class OnCollisionEnterSample : MonoBehaviour
         //衝突したオブジェクトがPlaneだった場合
         if(collision.gameObject.name=="Plane"){
             //色を黒に変化させる(https://xr-hub.com/archives/3993)
-            //GetComponent<Renderer>().material.color = Color.black;
+            GetComponent<Renderer>().material.color = Color.black;
             
             
             // //このジェンガを動かせないようにする(https://qiita.com/ryuuuuu000/items/200c4158ca7fc69dc827)
@@ -46,20 +46,19 @@ public class OnCollisionEnterSample : MonoBehaviour
                 ObjectManipulator othermanage=b.GetComponent<ObjectManipulator>();
                 othermanage.enabled=false;
             }
+
             
-            //ゲームオーバーの文字表示
+            //ゲームオーバーの文字表示(ほぼ確認用、一応そのまま使えはする)
             gameOverText.text="GameOver";
             //このスクリプトから生成したコンポーネントにアタッチしたオブジェクト(=TextMeshPro)の「text」を「GameOver」に変更(アタッチしているのでGetComponentは不要)
             gameOverText.color=new Color32(0,0,0,255);
             //このスクリプトから生成したコンポーネントにアタッチしたオブジェクト(=TextMeshPro)の色(文字色 RGBA)を変更(アタッチしているのでGetComponentは不要)            
             gameOverText.fontSize=100;//float型になる
-
             //文字装飾(あらかじめShaderの「outline」をONにしておく)
             gameOverText.outlineColor=new Color32(255,255,255,255);
             gameOverText.outlineWidth=0.15f;
             gameOverText.UpdateFontAsset();//更新
             gameOverText.fontStyle=TMPro.FontStyles.Italic;//イタリック体(斜字)に(https://docs.unity3d.com/Packages/com.unity.textmeshpro@1.3/api/TMPro.FontStyles.html)           
-
             //このスクリプトから生成したコンポーネントにアタッチしたオブジェクト(=TextMeshPro)の位置を上中央(Top)に変更
             //参考 https://docs.unity3d.com/Packages/com.unity.textmeshpro@1.3/api/TMPro.TextAlignmentOptions.html
             gameOverText.alignment=TMPro.TextAlignmentOptions.Center;
