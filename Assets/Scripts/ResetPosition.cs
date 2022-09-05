@@ -8,6 +8,7 @@ using Microsoft.MixedReality.Toolkit.UI;
 
 public class ResetPosition : MonoBehaviour
 {
+    public GameObject cube;
 
     Interactable thisButton;
     public GameObject[] gameObjects;
@@ -41,8 +42,21 @@ public class ResetPosition : MonoBehaviour
             gameObjects[i].transform.position = positions[i];
             gameObjects[i].transform.rotation = rotations[i];
             gameObjects[i].transform.localScale = scales[i];
+
+            gameObjects[i].GetComponent<NearInteractionGrabbable>().enabled = true;
+            gameObjects[i].GetComponent<NearInteractionTouchable>().enabled = true;
+            gameObjects[i].GetComponent<ObjectManipulator>().enabled = true;
         }
 
     }
+
+    //クリック時に掴めるようにする
+    public void PlayGame()
+    {
+        cube.GetComponent<NearInteractionGrabbable>().enabled = true;
+        cube.GetComponent<NearInteractionTouchable>().enabled = true;
+        cube.GetComponent<ObjectManipulator>().enabled = true;
+    }
+
 
 }
