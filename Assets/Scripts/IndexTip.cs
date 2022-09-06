@@ -15,7 +15,7 @@ public class IndexTip : MonoBehaviour
         //表示する立方体の作成
         cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
         //大きさの調整
-        cube.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+        cube.transform.localScale = new Vector3(0.02f, 0.02f, 0.02f);
         //色の調整
         // cube.GetComponent<Renderer>().material.color = Color.red;
         //rendering modeをTransparentにする
@@ -49,4 +49,5 @@ public class IndexTip : MonoBehaviour
         }
         
     }
+    
 }
