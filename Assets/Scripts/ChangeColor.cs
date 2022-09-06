@@ -13,10 +13,7 @@ public class ChangeColor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // 始めは白色
-        // GetComponent<Renderer>().material.color = Color.red;
-        //RGBで色を指定
-        // gameObject.GetComponent<Renderer>().material.color = new Color(170, 255, 45);
+
     }
 
     //キューブの色をHSVで取得
@@ -64,29 +61,4 @@ public class ChangeColor : MonoBehaviour
         //キューブの色をmaterialの色に変更
         cube.GetComponent<Renderer>().material.color = mat.color;
     }
-
-    // Update is called once per frame
-    // void Update()
-    // {
-    //     // キューブの色を取得
-    //     // Color color = cube.GetComponent<Renderer>().material.color;
-
-    //     // キューブの色をRGBAで取得
-    //     // float r = color.r;
-    //     // float g = color.g;
-    //     // float b = color.b;
-    //     // float a = color.a;
-
-    //     if (Input.GetKeyDown(KeyCode.Space))
-    //     {
-    //         // キューブの色をHSVで取得
-    //         float[] hsv = GetHSVColor();
-    //         float h = hsv[0];
-    //         float s = hsv[1];
-    //         float v = hsv[2];
-
-    //         // キューブを明るくする
-    //         SetHSVColor(h, s, v + 0.05f);
-    //     }
-    // }
 }

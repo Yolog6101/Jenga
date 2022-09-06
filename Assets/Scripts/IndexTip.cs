@@ -27,7 +27,7 @@ public class IndexTip : MonoBehaviour
         cube.GetComponent<Renderer>().material.EnableKeyword("_ALPHABLEND_ON");
         cube.GetComponent<Renderer>().material.DisableKeyword("_ALPHAPREMULTIPLY_ON");
         cube.GetComponent<Renderer>().material.renderQueue = 3000;
-        cube.GetComponent<Renderer>().material.SetColor("_Color", new Color(1, 0, 0, 0.1f));
+        cube.GetComponent<Renderer>().material.SetColor("_Color", new Color(1, 0, 0, 0f));
         //RGBAで透明にする
         // cube.GetComponent<Renderer>().material.color = new Color(0, 0, 0, 0);
         //rigidbodyの追加
