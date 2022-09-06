@@ -56,18 +56,20 @@ public class Startmanage : MonoBehaviour
         //ジェンガオブジェクトすべてを持つオブジェクトの名前objectsnameを利用　参考 https://qiita.com/No2DGameNoLife/items/696a9ddbe32847955303 https://sunagitsune.com/unitygetchild/
         GameObject gameobjects;
         GameObject gegameobjects;//子
-        GameObject gegegameobjects;//孫
+        //GameObject gegegameobjects;//孫
         gameobjects=GameObject.Find(objectsname);//
         for(int i=0;i<gameobjects.transform.childCount;i++){//子オブジェクト
             gegameobjects=gameobjects.transform.GetChild(i).gameObject;
-            //(暫定)ジェンガではないのでtagやOnCollisionEnterSampleはつけない
-            for(int m=0;m<gegameobjects.GetComponent<Transform>().transform.childCount;m++){//孫オブジェクト
-             gegegameobjects=gegameobjects.GetComponent<Transform>().transform.GetChild(m).gameObject;
-             //Debug.Log(gegegameobjects.name);
-             gegegameobjects.tag=tagname;
-             //OnCollisionEnterSampleを付与
-             gegegameobjects.AddComponent<OnCollisionEnterSample>();
-            } 
+            //tag OnCollisionEnterSample 付与
+            gegameobjects.tag=tagname;
+            gegameobjects.AddComponent<OnCollisionEnterSample>();
+            // for(int m=0;m<gegameobjects.GetComponent<Transform>().transform.childCount;m++){//孫オブジェクト
+            //  gegegameobjects=gegameobjects.GetComponent<Transform>().transform.GetChild(m).gameObject;
+            //  //Debug.Log(gegegameobjects.name);
+            //  gegegameobjects.tag=tagname;
+            //  //OnCollisionEnterSampleを付与
+            //  gegegameobjects.AddComponent<OnCollisionEnterSample>();
+            // } 
         }
         
     }
