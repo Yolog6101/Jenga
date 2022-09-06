@@ -7,8 +7,6 @@ using TMPro;
 using Microsoft.MixedReality.Toolkit.Input;//NearInteractionGrabbableのある名前空間
 using Microsoft.MixedReality.Toolkit.UI;//ObjectManipulatorのある名前空間
 
-//各ジェンガにアタッチすること
-
 public class OnCollisionEnterSample : MonoBehaviour
 {
     //private TMPro.TMP_Text gameover;

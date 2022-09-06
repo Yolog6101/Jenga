@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEditor;
 
 //ゲーム開始とともにジェンガにゲームオーバー処理に必要なタグを付与するスクリプト　☆必ずゲーム管理用空オブジェクトを用意し、そこにアタッチすること
+//ジェンガはすべて「GameObject」の子オブジェクトとすること(微調整で孫オブジェクトも可)
+
 
 public class Startmanage : MonoBehaviour
 {
@@ -56,13 +58,13 @@ public class Startmanage : MonoBehaviour
         //ジェンガオブジェクトすべてを持つオブジェクトの名前objectsnameを利用　参考 https://qiita.com/No2DGameNoLife/items/696a9ddbe32847955303 https://sunagitsune.com/unitygetchild/
         GameObject gameobjects;
         GameObject gegameobjects;//子
-        //GameObject gegegameobjects;//孫
+        GameObject gegegameobjects;//孫
         gameobjects=GameObject.Find(objectsname);//
         for(int i=0;i<gameobjects.transform.childCount;i++){//子オブジェクト
             gegameobjects=gameobjects.transform.GetChild(i).gameObject;
             //tag OnCollisionEnterSample 付与
-            gegameobjects.tag=tagname;
-            gegameobjects.AddComponent<OnCollisionEnterSample>();
+            gegameobjects.tag=tagname;//子オブジェクトにジェンガ１個１個がない場合はコメントアウト
+            gegameobjects.AddComponent<OnCollisionEnterSample>();//子オブジェクトにジェンガ１個１個がない場合はコメントアウト
             // for(int m=0;m<gegameobjects.GetComponent<Transform>().transform.childCount;m++){//孫オブジェクト
             //  gegegameobjects=gegameobjects.GetComponent<Transform>().transform.GetChild(m).gameObject;
             //  //Debug.Log(gegegameobjects.name);
