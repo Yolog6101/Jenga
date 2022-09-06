@@ -1,3 +1,5 @@
+//Startmanageとの整合が取れないので現在は使用しない
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,9 +7,6 @@ using UnityEngine;
 public class Createmap : MonoBehaviour
 {
     //３段以上の任意の高さのジェンガを自動で作る
-    public GameObject object1;//対象オブジェクトをunityでアタッチするのでここでは宣言のみ
-    public GameObject object2;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -20,8 +19,14 @@ public class Createmap : MonoBehaviour
         
     }
 
-    public void generate(int num)//指定段数のジェンガを作成できる関数　numは段数(>=3)
+    void Awake(){
+      
+    }
+
+    public void generate(int num)//指定段数のジェンガを作成できる関数　numは段数(>=3) object1,2は横並びジェンガ
     {
+        GameObject object1=GameObject.Find("tate");
+        GameObject object2=GameObject.Find("yoko");
         float x=0.0f;//☆状況に応じて変更！
         float z=3.0f;//☆状況に応じて変更！
         float count=1.0f;//while処理に使用        

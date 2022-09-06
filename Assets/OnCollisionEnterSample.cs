@@ -7,17 +7,19 @@ using TMPro;
 using Microsoft.MixedReality.Toolkit.Input;//NearInteractionGrabbableのある名前空間
 using Microsoft.MixedReality.Toolkit.UI;//ObjectManipulatorのある名前空間
 
+//各ジェンガにアタッチすること
+
 public class OnCollisionEnterSample : MonoBehaviour
 {
     //private TMPro.TMP_Text gameover;
-    public TextMeshProUGUI gameOverText = null;
+    //public TextMeshProUGUI gameOverText = null;
+    
 
     // Start is called before the first frame update
     void Start()
     {
         
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -28,7 +30,7 @@ public class OnCollisionEnterSample : MonoBehaviour
     {
         //衝突したオブジェクトがPlaneだった場合
         if(collision.gameObject.name=="Plane"){
-            //色を黒に変化させる(https://xr-hub.com/archives/3993)
+            //オブジェクト自身の色を黒に変化させる(https://xr-hub.com/archives/3993)
             GetComponent<Renderer>().material.color = Color.black;
             
             
@@ -40,14 +42,14 @@ public class OnCollisionEnterSample : MonoBehaviour
             //ジェンガすべて(つまり、tag="jenga"のオブジェクトすべて)動かせないようにする
             GameObject[] blocks = GameObject.FindGameObjectsWithTag ("jenga");//"jenga"のタグを持つオブジェクト一覧
             foreach(var b in blocks){
-                //Debug.Log(b.name);
+                Debug.Log(b.name);
                 NearInteractionGrabbable othermovemanage=b.GetComponent<NearInteractionGrabbable>();
                 othermovemanage.enabled=false;
                 ObjectManipulator othermanage=b.GetComponent<ObjectManipulator>();
                 othermanage.enabled=false;
             }
 
-            
+            TextMeshProUGUI gameOverText = GameObject.Find("gameover").GetComponent<TextMeshProUGUI>();
             //ゲームオーバーの文字表示(ほぼ確認用、一応そのまま使えはする)
             gameOverText.text="GameOver";
             //このスクリプトから生成したコンポーネントにアタッチしたオブジェクト(=TextMeshPro)の「text」を「GameOver」に変更(アタッチしているのでGetComponentは不要)
