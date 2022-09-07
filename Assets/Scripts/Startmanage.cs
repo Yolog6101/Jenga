@@ -6,7 +6,6 @@ using UnityEditor;
 //ゲーム開始とともにジェンガにゲームオーバー処理に必要なタグを付与するスクリプト　☆必ずゲーム管理用空オブジェクトを用意し、そこにアタッチすること
 //ジェンガはすべて「GameObject」の子オブジェクトとすること(微調整で孫オブジェクトも可)
 
-
 public class Startmanage : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -14,7 +13,7 @@ public class Startmanage : MonoBehaviour
     {
         //tagの付与(下例は第2引数の名前のオブジェクトに含まれるオブジェクトすべて(孫)に「jenga」タグを付与)
         AddTagList("jenga");
-        AddTag("jenga","GameObject");
+        AddTag("jenga","GameObjects");
         
     }
 
@@ -64,7 +63,7 @@ public class Startmanage : MonoBehaviour
             gegameobjects=gameobjects.transform.GetChild(i).gameObject;
             //tag OnCollisionEnterSample 付与
             gegameobjects.tag=tagname;//子オブジェクトにジェンガ１個１個がない場合はコメントアウト
-            gegameobjects.AddComponent<OnCollisionEnterSample>();//子オブジェクトにジェンガ１個１個がない場合はコメントアウト
+            gegameobjects.AddComponent<OnCollisionEnterSample>();//子オブジェクトにジェンガ１個１個がない場合はコメントアウト 
             // for(int m=0;m<gegameobjects.GetComponent<Transform>().transform.childCount;m++){//孫オブジェクト
             //  gegegameobjects=gegameobjects.GetComponent<Transform>().transform.GetChild(m).gameObject;
             //  //Debug.Log(gegegameobjects.name);
