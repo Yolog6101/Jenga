@@ -43,9 +43,9 @@ public class Reset : MonoBehaviour
             gameObjects[i].transform.position = positions[i];
             gameObjects[i].transform.rotation = rotations[i];
             gameObjects[i].transform.localScale = scales[i];
-            // gameObjects[i].GetComponent<NearInteractionGrabbable> ().enabled = true;
-            // gameObjects[i].GetComponent<NearInteractionTouchable>().enabled = true;
-            // gameObjects[i].GetComponent<ObjectManipulator>().enabled = true;
+            gameObjects[i].GetComponent<NearInteractionGrabbable> ().enabled = true;
+            gameObjects[i].GetComponent<NearInteractionTouchable>().enabled = true;
+            gameObjects[i].GetComponent<ObjectManipulator>().enabled = true;
         }
 
     }

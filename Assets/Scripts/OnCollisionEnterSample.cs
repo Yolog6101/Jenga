@@ -53,8 +53,8 @@ public class OnCollisionEnterSample : MonoBehaviour
                 ObjectManipulator othermanage=b.GetComponent<ObjectManipulator>();
                 othermanage.enabled=false;
             }
-
-            SceneManager.LoadScene("fail");//Scene「fail」に飛ぶ
+            //SceneManager.LoadScene("fail");//Scene「fail」に飛ぶ　飛ばない場合はコメントアウト
+            
             // TextMeshProUGUI gameOverText = GameObject.Find("gameover").GetComponent<TextMeshProUGUI>();
             // //ゲームオーバーの文字表示(ほぼ確認用、一応そのまま使えはする)
             // gameOverText.text="GameOver";
@@ -87,8 +87,8 @@ public class OnCollisionEnterSample : MonoBehaviour
             ObjectManipulator othermanage=b.GetComponent<ObjectManipulator>();
             othermanage.enabled=false;
         }
-        SceneManager.LoadScene("fail");//Scene「fail」に飛ぶ
-        
+        //SceneManager.LoadScene("fail");//Scene「fail」に飛ぶ　飛ばない場合はコメントアウト
+
         // TextMeshProUGUI gameOverText = GameObject.Find("gameover").GetComponent<TextMeshProUGUI>();
         // //ゲームオーバーの文字表示(ほぼ確認用、一応そのまま使えはする)
         // gameOverText.text="GameOver";
