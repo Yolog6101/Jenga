@@ -57,7 +57,7 @@ public class Startmanage : MonoBehaviour
         //ジェンガオブジェクトすべてを持つオブジェクトの名前objectsnameを利用　参考 https://qiita.com/No2DGameNoLife/items/696a9ddbe32847955303 https://sunagitsune.com/unitygetchild/
         GameObject gameobjects;
         GameObject gegameobjects;//子
-        GameObject gegegameobjects;//孫
+        //GameObject gegegameobjects;//孫
         gameobjects=GameObject.Find(objectsname);//
         for(int i=0;i<gameobjects.transform.childCount;i++){//子オブジェクト
             gegameobjects=gameobjects.transform.GetChild(i).gameObject;

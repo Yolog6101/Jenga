@@ -52,6 +52,8 @@ public class OnCollisionEnterSample : MonoBehaviour
                 othermovemanage.enabled=false;
                 ObjectManipulator othermanage=b.GetComponent<ObjectManipulator>();
                 othermanage.enabled=false;
+                Rigidbody rigid=b.GetComponent<Rigidbody>();
+                rigid.velocity=new Vector3 (0,0,0);//無限遠に飛んでいかないように速度を0にしておく
             }
             //SceneManager.LoadScene("fail");//Scene「fail」に飛ぶ　飛ばない場合はコメントアウト
             
@@ -71,7 +73,7 @@ public class OnCollisionEnterSample : MonoBehaviour
             // //参考 https://docs.unity3d.com/Packages/com.unity.textmeshpro@1.3/api/TMPro.TextAlignmentOptions.html
             // gameOverText.alignment=TMPro.TextAlignmentOptions.Center;
             
-
+            
             //☆TextMeshProのプロパティを操作するコード一覧(一部) https://qiita.com/hinagawa/items/b606c6a2fd56d559a375 ☆
         }
     }
