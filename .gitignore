@@ -5,6 +5,7 @@
 [Bb]uilds/ 
 [Ll]ogs/
 Assets/AssetStoreTools* 
+Pods/*
 
 # Visual Studio cache directory 
 .vs/ 
