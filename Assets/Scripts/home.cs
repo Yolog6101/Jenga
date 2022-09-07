@@ -8,7 +8,7 @@ using Microsoft.MixedReality.Toolkit.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class Choose2 : MonoBehaviour
+public class home : MonoBehaviour
 {
     Interactable thisButton;
 
@@ -23,7 +23,7 @@ public class Choose2 : MonoBehaviour
     void OnClick()
     {
         Debug.Log("Clicked");
-        SceneManager.LoadScene("hard");
+        SceneManager.LoadScene("start");
     }
     void Update () {
 
