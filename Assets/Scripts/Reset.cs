@@ -47,6 +47,8 @@ public class Reset : MonoBehaviour
             gameObjects[i].GetComponent<NearInteractionTouchable>().enabled = true;
             gameObjects[i].GetComponent<ObjectManipulator>().enabled = true;
         }
+        TextMeshProUGUI gameOverText = GameObject.Find("gameover").GetComponent<TextMeshProUGUI>();
+        gameOverText.text="";
 
     }
 }
