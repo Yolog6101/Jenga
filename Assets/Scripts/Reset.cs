@@ -37,6 +37,9 @@ public class Reset : MonoBehaviour
 
     void onClick()
     {
+        TextMeshProUGUI gameOverText = GameObject.Find("gameover").GetComponent<TextMeshProUGUI>();
+        //ゲームオーバーの文字消去
+        gameOverText.text="";
         Debug.Log("Clicked");
         for (int i = 0; i < gameObjects.Length; i++)
         {
