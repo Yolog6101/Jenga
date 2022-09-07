@@ -23,7 +23,7 @@ public class Choose2 : MonoBehaviour
     void OnClick()
     {
         Debug.Log("Clicked");
-        SceneManager.LoadScene("4");
+        SceneManager.LoadScene("hard");
     }
     void Update () {
 
