@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
+// using UnityEditor;
 
 //ゲーム開始とともにジェンガにゲームオーバー処理に必要なタグを付与するスクリプト　☆必ずゲーム管理用空オブジェクトを用意し、そこにアタッチすること
 //ジェンガはすべて「GameObject」の子オブジェクトとすること(微調整で孫オブジェクトも可)
@@ -12,7 +12,7 @@ public class Startmanage : MonoBehaviour
     void Start()
     {
         //tagの付与(下例は第2引数の名前のオブジェクトに含まれるオブジェクトすべて(孫)に「jenga」タグを付与)
-        AddTagList("jenga");
+        // AddTagList("jenga");
         AddTag("jenga","GameObjects");
         
     }
@@ -25,33 +25,33 @@ public class Startmanage : MonoBehaviour
 
 
     //参考 https://qiita.com/seinosuke/items/e8c7ee2e1f98a76070e2
-    void AddTagList(string tagname) {
-        UnityEngine.Object[] asset = AssetDatabase.LoadAllAssetsAtPath("ProjectSettings/TagManager.asset");
-        // if ((asset != null) && (asset.Length > 0)) {
-        //     SerializedObject so = new SerializedObject(asset[0]);
-        //     SerializedProperty tags = so.FindProperty("tags");
+    // void AddTagList(string tagname) {
+    //     UnityEngine.Object[] asset = AssetDatabase.LoadAllAssetsAtPath("ProjectSettings/TagManager.asset");
+    //     // if ((asset != null) && (asset.Length > 0)) {
+    //     //     SerializedObject so = new SerializedObject(asset[0]);
+    //     //     SerializedProperty tags = so.FindProperty("tags");
 
-        //     // //引数のタグがすでにリストに存在するか確認
-        //     // for (int i = 0; i < tags.arraySize; ++i) {
-        //     //     if (tags.GetArrayElementAtIndex(i).stringValue == tagname) {
-        //     //         return;
-        //     //     }
-        //     // }
+    //     //     // //引数のタグがすでにリストに存在するか確認
+    //     //     // for (int i = 0; i < tags.arraySize; ++i) {
+    //     //     //     if (tags.GetArrayElementAtIndex(i).stringValue == tagname) {
+    //     //     //         return;
+    //     //     //     }
+    //     //     // }
 
-        //     int index = tags.arraySize;
-        //     tags.InsertArrayElementAtIndex(index);//空の要素をインデックス「index」に挿入
-        //     tags.GetArrayElementAtIndex(index).stringValue = tagname;//引数のタグを追加
-        //     so.ApplyModifiedProperties();//更新処理
-        //     so.Update();
-        // }
-        SerializedObject so = new SerializedObject(asset[0]);
-        SerializedProperty tags = so.FindProperty("tags");
-        int index = tags.arraySize;
-        tags.InsertArrayElementAtIndex(index);//空の要素をインデックス「index」に挿入
-        tags.GetArrayElementAtIndex(index).stringValue = tagname;//引数のタグを追加
-        so.ApplyModifiedProperties();//更新処理
-        so.Update();
-    }
+    //     //     int index = tags.arraySize;
+    //     //     tags.InsertArrayElementAtIndex(index);//空の要素をインデックス「index」に挿入
+    //     //     tags.GetArrayElementAtIndex(index).stringValue = tagname;//引数のタグを追加
+    //     //     so.ApplyModifiedProperties();//更新処理
+    //     //     so.Update();
+    //     // }
+    //     SerializedObject so = new SerializedObject(asset[0]);
+    //     SerializedProperty tags = so.FindProperty("tags");
+    //     int index = tags.arraySize;
+    //     tags.InsertArrayElementAtIndex(index);//空の要素をインデックス「index」に挿入
+    //     tags.GetArrayElementAtIndex(index).stringValue = tagname;//引数のタグを追加
+    //     so.ApplyModifiedProperties();//更新処理
+    //     so.Update();
+    // }
 
     void AddTag(string tagname,string objectsname){
         //ジェンガオブジェクトすべてを持つオブジェクトの名前objectsnameを利用　参考 https://qiita.com/No2DGameNoLife/items/696a9ddbe32847955303 https://sunagitsune.com/unitygetchild/

@@ -15,7 +15,7 @@ public class FingerCube : MonoBehaviour
         //表示する立方体の作成
         cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
         //大きさの調整
-        cube.transform.localScale = new Vector3(0.025f, 0.025f, 0.025f);
+        cube.transform.localScale = new Vector3(0.03f, 0.012f, 0.012f);
         //色の調整
         // cube.GetComponent<Renderer>().material.color = Color.red;
         //rendering modeをTransparentにする
@@ -27,7 +27,7 @@ public class FingerCube : MonoBehaviour
         cube.GetComponent<Renderer>().material.EnableKeyword("_ALPHABLEND_ON");
         cube.GetComponent<Renderer>().material.DisableKeyword("_ALPHAPREMULTIPLY_ON");
         cube.GetComponent<Renderer>().material.renderQueue = 3000;
-        cube.GetComponent<Renderer>().material.SetColor("_Color", new Color(1, 0, 0, 0.1f));
+        cube.GetComponent<Renderer>().material.SetColor("_Color", new Color(1, 0, 0, 0.0f));
         //RGBAで透明にする
         // cube.GetComponent<Renderer>().material.color = new Color(0, 0, 0, 0);
         //rigidbodyの追加
