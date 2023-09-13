@@ -17,10 +17,10 @@
 - 難易度選択画面
 ![スタート画面](https://github.com/Yolog6101/Jenga/assets/72485319/3ebabce9-e6ca-4291-89ae-a6edcc8a8ae8)
 
--「EASY」でのゲーム画面
+- 「EASY」でのゲーム画面
 ![「EASY」](https://github.com/Yolog6101/Jenga/assets/72485319/67e79b15-bdd1-4d9c-83fc-f9f6dc714ba5)
 
--「HARD」でのゲーム画面
+- 「HARD」でのゲーム画面
 ![「「HARD」」](https://github.com/Yolog6101/Jenga/assets/72485319/7068e2d6-ca79-4dac-bd94-7cf8c257bc81)
 
 
